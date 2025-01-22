@@ -113,19 +113,6 @@ function obtenerUsers() {
 // Mostrar los datos de los usuarios en una tabla utilizando DataTables
 $(document).ready(function(){
     let usuarios = obtenerUsers(); // Recupera la lista de usuarios almacenados en localStorage
-    let tabla = $("#tabla").DataTable({ // Inicializa la tabla con DataTables
-        paging: true,
-        pageLength: 4,
-        lengthMenu: [4,10,25,50],
-    }); 
-    //Limpiar la talba antes de llenarla
-    tabla.clear();
-    //Agregar cada usuario a la tabla 
-    usuarios.forEach(usuario => {
-        tabla.row.add([usuario.name,usuario.email,usuario.password]).draw();
-    });
-});
-$(document).ready(function() {
     $('#tabla').DataTable({
         retrieve: true,
         paging: true, // Habilitar la paginación
@@ -152,5 +139,11 @@ $(document).ready(function() {
                 sortDescending: ": Activar para ordenar la columna de manera descendente"
             }
         }
+    }); 
+    //Limpiar la talba antes de llenarla
+    tabla.clear();
+    //Agregar cada usuario a la tabla 
+    usuarios.forEach(usuario => {
+        tabla.row.add([usuario.name,usuario.email,usuario.password]).draw();
     });
 });
