@@ -1,6 +1,12 @@
 body{
     background-color: rgb(206, 248, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
 }
 .card{
     background-color: rgb(127, 240, 255);
+    width: 25rem;
+    margin: 20px auto;
 }
